@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InteresService } from '../interes.service';
+import { Clase } from '../class-list/clase';
 
 @Component({
   selector: 'app-me-interesa',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeInteresaComponent implements OnInit {
 
-  constructor() { }
 
+  listInteres: Clase[] = [];
+  constructor(private interes: InteresService) {
+    interes.listaInteres.subscribe(o => this.listInteres = o);
+  }
   ngOnInit(): void {
   }
+  addToInteres(clase: Clase): void{
+    this.interes.addToInteres(clase);
 
+
+  }
 }

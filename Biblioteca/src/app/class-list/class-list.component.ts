@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InteresService } from '../interes.service';
 import { Clase } from "./clase";
 
 @Component({
@@ -14,7 +15,7 @@ export class ClassListComponent implements OnInit {
     video: 'https://www.youtube.com/watch?v=iGNoi8is3vk',
     slide: 'https://docs.google.com/presentation/d/1_Zm9ZlUYcz9kNVSzgtaryKhXnuSWzvyO3RVe3QEK2ks/edit#slide=id.p',
     images: 'assets/images/angular.png',
-    visto: true,
+    visto: false,
     like:0,
     },
 
@@ -63,7 +64,7 @@ export class ClassListComponent implements OnInit {
     video: 'https://www.youtube.com/watch?v=nq1U_fVR1sw',
     slide: 'https://docs.google.com/presentation/d/1g__35jk7ggIlUvdAl5rWAEo5Ktyznhx6u-bo3d-Lb98/edit#slide=id.p',
     images: 'assets/images/angular.png',
-    visto: true,
+    visto: false,
     like:0,
     },
 
@@ -88,15 +89,15 @@ export class ClassListComponent implements OnInit {
     },
 
   ];
-  constructor() {
 
+  constructor(private interes: InteresService) {
    }
 
   ngOnInit(): void {
   }
-  upLike(clase: Clase):void{
-    clase.like++;
+  addToInteres(clase: Clase): void{
+    this.interes.addToInteres(clase);
+    console.log(clase);
   }
-
 
 }
