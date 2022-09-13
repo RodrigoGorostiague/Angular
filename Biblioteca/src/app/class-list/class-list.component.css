@@ -1,0 +1,16 @@
+img{
+  height: 20px;
+}
+a{
+  text-decoration: none;
+
+}
+.table a:hover{
+  text-decoration: underline;
+}
+table{
+  margin-left: 10px;
+}
+h2{
+  margin-left: 10px;
+}
