@@ -8,7 +8,7 @@
     <td>Acciones</td>
   </thead>
   <tbody>
-    <tr *ngFor="let clase of listInteres">
+    <tr *ngFor="let clase of listInteres$ | async">
       <td> <img [src]="clase.images" [alt]="clase.images"> {{clase.tema}}</td>
       <td>{{clase.descripcion}}</td>
       <td><a [href]="clase.video">Video</a></td>

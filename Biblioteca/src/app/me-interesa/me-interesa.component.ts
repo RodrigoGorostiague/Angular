@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InteresService } from '../interes.service';
 import { Clase } from '../class-list/clase';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-me-interesa',
@@ -10,9 +11,9 @@ import { Clase } from '../class-list/clase';
 export class MeInteresaComponent implements OnInit {
 
 
-  listInteres: Clase[] = [];
+  listInteres$!: Observable<Clase[]>;
   constructor(private interes: InteresService) {
-    interes.listaInteres.subscribe(o => this.listInteres = o);
+    this.listInteres$ = interes.listaInteres.asObservable();
   }
   ngOnInit(): void {
   }
