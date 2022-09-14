@@ -8,6 +8,8 @@ import { MeInteresaComponent } from './me-interesa/me-interesa.component';
 import { AboutBibliotecaComponent } from './about-biblioteca/about-biblioteca.component';
 import { HomeBibliotecaComponent } from './home-biblioteca/home-biblioteca.component';
 import { NumberLikesComponent } from './number-likes/number-likes.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { NumberLikesComponent } from './number-likes/number-likes.component';
     AboutBibliotecaComponent,
     HomeBibliotecaComponent,
     NumberLikesComponent
-  ],
+    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
