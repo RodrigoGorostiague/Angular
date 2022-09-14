@@ -7,6 +7,7 @@ import { Clase } from './class-list/clase';
 })
 export class InteresService {
 
+
   private _listaInteres: Clase[]=[];
   listaInteres:BehaviorSubject<Clase[]> = new BehaviorSubject(this._listaInteres);
 
@@ -15,7 +16,7 @@ export class InteresService {
   addToInteres(clase: Clase) {
     let item = this._listaInteres.find((v1)=>v1.descripcion==clase.descripcion);
     if(!item){
-      this._listaInteres.push(clase);
+      this._listaInteres.push({...clase});
       clase.visto=true;
     }
     else{
@@ -23,4 +24,12 @@ export class InteresService {
     }
     this.listaInteres.next(this._listaInteres);
   }
+  deleteToInteres(clase: Clase){
+    let id = this._listaInteres.find((v1)=>v1.id==clase.id);
+
+      this._listaInteres.pop;
+      this.listaInteres.next(this._listaInteres);
+
+  }
+
 }

@@ -19,7 +19,8 @@ export class MeInteresaComponent implements OnInit {
   }
   addToInteres(clase: Clase): void{
     this.interes.addToInteres(clase);
-
-
+  }
+  deleteToInteres(clase: Clase): void{
+    this.interes.deleteToInteres(clase);
   }
 }

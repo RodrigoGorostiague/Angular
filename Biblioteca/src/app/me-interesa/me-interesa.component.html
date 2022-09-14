@@ -8,12 +8,12 @@
     <td>Acciones</td>
   </thead>
   <tbody>
-    <tr *ngFor="let clase of listInteres$ | async">
+    <tr *ngFor="let clase of listInteres$ |async">
       <td> <img [src]="clase.images" [alt]="clase.images"> {{clase.tema}}</td>
       <td>{{clase.descripcion}}</td>
       <td><a [href]="clase.video">Video</a></td>
       <td><a [href]="clase.slide">Slide</a></td>
-      <td><input class="btn btn-outline-warning" type="button" value="Eliminar"></td>
+      <td><input id="{{clase.id}}" (click)="deleteToInteres" class="btn btn-outline-warning" type="button" value="Eliminar"></td>
       </tr>
   </tbody>
 </table>

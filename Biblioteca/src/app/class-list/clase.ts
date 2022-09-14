@@ -1,4 +1,5 @@
 export interface Clase {
+    id: number;
     tema: string;
     descripcion: string;
     video: string;
